@@ -1,0 +1,20 @@
+[@classmethod vs @staticmethod]
+
+In general if you feel like the method doesnt do anything with the class in itself , then its better to make it a static method
+
+E.g
+
+@classmethod
+def from_string(cls, emp_str):
+  first,last,pay = emp_str.split('-')
+  return cls(first,last, pay)
+# here in the above return we are using the cls instance in the method , so its better to use a classmethod
+
+
+@staticmethod
+def is_workday(day):
+  if day.workday() ==5 or day.workday()==6
+    return False
+  return True
+# we havent used the class anywhere here so better to use static method
+
