@@ -18,3 +18,10 @@ def is_workday(day):
   return True
 # we havent used the class anywhere here so better to use static method
 
+[Help function]
+print(help(CLASSNAME))
+gives the method resolution order
+
+[None as arguments]
+
+Dont pass immutable data types as default arguements 
