@@ -52,3 +52,38 @@ hello\t stranger # its useful to take the text as is without the formatter being
 print(""" this is triple quoted , isn't it """ ) # dont need to escape single quotes or double if used
 also for doc strings
 """ this is a sample functon which takes one arg and returns int """ 
+
+[list vs tuple]
+list a = [1,2,3,4,4,5]
+tupple b=(1,2,3) 
+cant do assignment in tupple
+[set]
+unique values only
+c=set(a)
+print(c)
+set([1,2,3,4])
+
+[dict]
+a= {}
+a['name']= 'bob'
+a['age']= 45
+print(a.get('country'))
+#this will return NONE rather than key error, its a safer way of doing lookups
+
+[abs]
+abs(-5) gives 5
+
+[divmod]
+combination of divison and modulo
+divmod(10,3)
+is (3,1)
+
+[max min]
+
+max([-4,-2])
+returns -2
+
+
+
+
+
