@@ -95,7 +95,16 @@ all(a) = true
 all (b) = false
 all (c) = flase
 
+[scope vars]
+print(vars())  will print the variables in the local scope
+print(globals()) will print the varibles in global scopes as a dictonary
 
+[eval]
+print(eval(calc,{})) 
+#only the functions allowed inside the {} are available to eval
+
+*todo:
+*eval safe use and exec safe use check
 
 
 
