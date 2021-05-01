@@ -1,2 +1,31 @@
 a= "hello"
 dir(a) #this will list all available methods
+or dir(int)
+dir(float) 
+
+[Debugging]
+1)Use print for debug
+2)and also print(f'Number: {type(number)}') #this gives the type of number printed
+3)import pdb and pdb.set_trace()
+
+[pdb usage]
+
+(Pdb) l  #(type L in small case to see the line in which we are , this is normally line after pdb.set_trace() )
+after that its like ipython , we can easily check values
+
+(pdb) c #for continue
+
+[data types]
+Have it in binary with 0b, octale 0o and hex with 0x
+
+>>> c=0b101010111
+>>> c
+343
+>>> d=0o454312
+>>> d
+153802
+>>> e=0xac4d
+>>> e
+44109
+
+
