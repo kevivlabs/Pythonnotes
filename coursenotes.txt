@@ -82,6 +82,18 @@ is (3,1)
 
 max([-4,-2])
 returns -2
+[any vs all ]
+
+a =[true, true, true]
+b=[true, false, true]
+c=[false , false, false]
+
+any(a) = True
+any (b)= true
+any(c) = false
+all(a) = true
+all (b) = false
+all (c) = flase
 
 
 
