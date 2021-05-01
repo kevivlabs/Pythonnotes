@@ -27,5 +27,28 @@ Have it in binary with 0b, octale 0o and hex with 0x
 >>> e=0xac4d
 >>> e
 44109
+to convert use bin(number) or oct(number) or hex(number)
 
+[for division]
+by default normal division gives float 10/5 = 2.0
+to have only int values use double divide 10//5 = 2
 
+.4e7 means .4 *10^7 
+ 4e-4 means 4 divided by 10^4
+ 
+ c='hi "I wasn\'t there" ' 
+ \' to escape the character which you think is not the closing 
+ 
+ \n for newline
+\t for tabs
+
+[raw strings]
+
+b=r"hello\t stranger"
+print(b)
+hello\t stranger # its useful to take the text as is without the formatter being excluded, useful for REgex
+
+[triple quotes strings]
+print(""" this is triple quoted , isn't it """ ) # dont need to escape single quotes or double if used
+also for doc strings
+""" this is a sample functon which takes one arg and returns int """ 
