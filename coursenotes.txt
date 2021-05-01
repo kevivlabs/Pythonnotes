@@ -1,0 +1,2 @@
+a= "hello"
+dir(a) #this will list all available methods
