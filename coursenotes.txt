@@ -142,7 +142,7 @@ print (a)
 #answer is 257 because until 256 a and b are the same
 
 
-
+help(keywords) gives all keywords
 
 
 
