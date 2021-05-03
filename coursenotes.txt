@@ -145,4 +145,32 @@ print (a)
 help(keywords) gives all keywords
 
 
+[Dont compare float variables directly]
+the value stored internally for a float object may not be precisely what you’d think it would be. For that reason, it is poor practice to compare floating-point values for exact equality. Consider this example:
+
+>>> x = 1.1 + 2.2
+>>> x == 3.3
+x=1.1+2.2
+print (x)
+3.3000000000000003
+
+Hence better way of doing this is 
+tolerance = 0.00001
+>>> x = 1.1 + 2.2
+>>> abs(x - 3.3) < tolerance
+True
+
+
+[default values]
+string = 'foo bar'
+>>> s = string or '<default_value>'
+>>> s
+'foo bar'
+this works because the or is true , if the string is empty by default its a zero aka false. and hence false or True will be true and the default value provided will be given to the string
+
+[ is identity operator]
+a is b , a is not b 
+compares value 
+From stack overflow: 
+The operator a is b returns True if a and b are bound to the same object, otherwise False. When you create two empty lists you get two different objects, so is returns False (and therefore is not returns True).
 
