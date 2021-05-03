@@ -95,6 +95,13 @@ all(a) = true
 all (b) = false
 all (c) = flase
 
+print(r'\t\n\trawwwww')
+just prints the raw string
+
+str() vs repr() 
+later used for debugging
+str for user display
+
 [scope vars]
 print(vars())  will print the variables in the local scope
 print(globals()) will print the varibles in global scopes as a dictonary
