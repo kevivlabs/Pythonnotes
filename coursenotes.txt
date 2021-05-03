@@ -113,5 +113,36 @@ print(eval(calc,{}))
 *todo:
 *eval safe use and exec safe use check
 
+[Varibale value vs identity]
+Everything is an object in Python 
+
+In [1]: n= 300
+
+In [2]: m= 300
+
+In [3]: id(n)
+Out[3]: 140548259814256
+
+id(n)==id(m)
+false
+
+[small integer caching]
+but if n =30 and m = 30 
+id(n)==id(m) 
+is True
+from -5 to 256 there is a cache by python 
+
+a,b= 250,250
+for _ in range(250,260):
+    if a is not b:
+        break
+    a+=1
+    b+=1
+print (a) 
+#answer is 257 because until 256 a and b are the same
+
+
+
+
 
 
