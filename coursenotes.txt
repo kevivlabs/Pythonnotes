@@ -174,3 +174,75 @@ compares value
 From stack overflow: 
 The operator a is b returns True if a and b are bound to the same object, otherwise False. When you create two empty lists you get two different objects, so is returns False (and therefore is not returns True).
 
+[String vs List]
+
+List doesnt return a list after operation
+a=["hi, "1" ]
+x=a.append('world')
+print (x) #None is the answer
+
+a =['hi',1, 'world']
+
+similarly
+a=['a','b']
+a+[1,2,3]
+['a','b',1,2,3]
+# List doesnt return anything, so printing a again will be the original value
+>>>a 
+['a','b']
+
+Now the difference with append
+
+>>a.append([1,2,3])
+>>a
+['a', 'b', [1, 2, 3]]
+It gets updated on the original list
+
+a.extend makes it a iterable
+
+a.extend([1,2,3])
+a
+['a','b',1,2,3]
+
+
+[shallow copy]
+b=a[].copy
+When you use sublist within list, any change in the sublist will change the original list
+
+[Tuple]
+
+way of accessing is the same as list
+t=('hi, 1, 'world')
+but we  still use list like [] for accessing
+t[0]= hi 
+
+some gotchas
+t=()
+type(t)
+<class 'tuple'>
+
+however
+t=(2)
+t
+2
+type(t) 
+<class 'int'> 
+#this is because (2) can also be operator precedence and thus python treats it as int
+
+To make it a tuple
+t=(2, ) #this extra space is needed
+
+by default python makes declaration into a tuple
+t= 1,2,3
+t
+(1,2,3)
+
+In [11]: a='spam'
+
+In [12]: b=42
+
+In [13]: a,3.14,b
+Out[14]: ('spam', 3.14, 42)
+https://wiki.python.org/moin/TimeComplexity
+
+
