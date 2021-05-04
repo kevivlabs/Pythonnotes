@@ -1,0 +1,4 @@
+requirements.txt will include everything for setting up the project, this includes tests
+setup file will only include dependecies which are needed for running
+
+https://realpython.com/pipenv-guide/ [to read]
