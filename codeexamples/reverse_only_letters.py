@@ -11,6 +11,6 @@ def reverse_only_letters(text):
         elif not (s[j].isalpha()):
             j -=1
     #print (type (str(s)))
-    return print(str(s))
+    return print("".join(s))
 
 reverse_only_letters("H3ll0 W0r$")
