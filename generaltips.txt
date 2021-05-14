@@ -1,0 +1,9 @@
+For a collection of items if asked to find the n largest or n smallest
+
+Either we sort it and then return the sorted(items)[:N] #first sorting and then returing the first n smallest
+sorted(items)[-N:] #sorting first and returning the largest by counting in negative
+
+or use heapq
+import heapq
+print(heapq.nlargest(n,items))
+
