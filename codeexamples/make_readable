@@ -1,0 +1,15 @@
+import time
+def make_readable(seconds):
+    m,s = divmod(seconds,60)
+    h,m = divmod(m,60)
+    return (f'{h:02d}:{m:02d}:{s:02d}' )
+make_readable(60) # 00:01:00"
+
+#the important part is the hard to find details on formatting
+
+''' You are looking for the str.format() documentation. Specifically, the 02d part is documented in the Format Specification Mini-Language.
+
+02d formats an integer (d) to a field of minimum width 2 (2), with zero-padding on the left (leading 0):
+
+>>> 'No digits: {:02d}, 1 digit: {:02d}, 2: {:02d}, 3: {:02d}'.format(0, 7, 42, 151)
+'No digits: 00, 1 digit: 07, 2: 42, 3: 151' '''
