@@ -1,0 +1,50 @@
+Main idea is that both children are smaller than the root node
+
+This is what the Python heapq module does.
+
+There are three rules that determine the relationship between the element at the index k and its surrounding elements:
+
+Its first child is at 2*k + 1.
+Its second child is at 2*k + 2.
+Its parent is at (k - 1) // 2.
+
+h[k] <= h[2*k + 1] and h[k] <= h[2*k + 2]
+In other words, an element must always be smaller than the elements that are at twice its index plus one and twice its index plus two.
+
+>>> import heapq
+>>> a = [3, 5, 1, 2, 6, 8, 7]
+>>> heapq.heapify(a)
+>>> a
+[1, 2, 3, 5, 6, 8, 7]
+You can check that even though 7 comes after 8, the list a still obeys the heap property. For example, a[2], which is 3, is less than a[2*2 + 2], which is 7.
+
+
+import heapq
+>>> a = [1, 2, 3, 5, 6, 8, 7]
+>>> heapq.heappop(a)
+1
+>>> a
+[2, 5, 3, 7, 6, 8]
+
+The function returns the first element, 1, and preserves the heap property on a. For example, a[1] is 5 and a[1*2 + 2] is 6.
+
+import heapq
+>>> a = [2, 5, 3, 7, 6, 8]
+>>> heapq.heappush(a, 4)
+>>> a
+[2, 5, 3, 7, 6, 8, 4]
+>>> heapq.heappop(a)
+2
+>>> heapq.heappop(a)
+3
+>>> heapq.heappop(a)
+4
+After pushing 4 to the heap, you pop three elements from it. Since 2 and 3 were already in the heap and are smaller than 4, they’re popped first.
+
+The Python heapq module also defines two more operations:
+
+heapreplace() is equivalent to heappop() followed by heappush().
+heappushpop() is equivalent to heappush() followed by heappop().
+These are useful in some algorithms since they’re more efficient than doing the two operations separately.
+
+heapq.merge() check more details
