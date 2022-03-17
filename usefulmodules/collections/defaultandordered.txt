@@ -1,0 +1,67 @@
+favorites = {"pet": "dog", "color": "blue", "language": "Python"}
+favorites.setdefault("fruit", "apple")
+'apple'
+
+
+from collections import defaultdict
+
+>>> pets = [
+...     ("dog", "Affenpinscher"),
+...     ("dog", "Terrier"),
+...     ("dog", "Boxer"),
+...     ("cat", "Abyssinian"),
+...     ("cat", "Birman"),
+... ]
+
+>>> group_pets = defaultdict(list)
+
+>>> for pet, breed in pets:
+...     group_pets[pet].append(breed)
+...
+
+>>> for pet, breeds in group_pets.items():
+...     print(pet, "->", breeds)
+
+
+from collections import OrderedDict
+
+>>> life_stages = OrderedDict()
+letters = OrderedDict(b=2, d=4, a=1, c=3)
+>>> letters
+OrderedDict([('b', 2), ('d', 4), ('a', 1), ('c', 3)])
+
+>>> # Move b to the right end
+>>> letters.move_to_end("b")
+>>> letters
+OrderedDict([('d', 4), ('a', 1), ('c', 3), ('b', 2)])
+
+>>> # Move b to the left end
+>>> letters.move_to_end("b", last=False)
+>>> letters
+OrderedDict([('b', 2), ('d', 4), ('a', 1), ('c', 3)])
+
+>>> # Sort letters by key
+>>> for key in sorted(letters):
+...     letters.move_to_end(key)
+...
+
+>>> letters
+OrderedDict([('a', 1), ('b', 2), ('c', 3), ('d', 4)])
+
+ from collections import OrderedDict
+
+>>> # Regular dictionaries compare the content only
+>>> letters_0 = dict(a=1, b=2, c=3, d=4)
+>>> letters_1 = dict(b=2, a=1, d=4, c=3)
+>>> letters_0 == letters_1
+True
+
+>>> # Ordered dictionaries compare content and order
+>>> letters_0 = OrderedDict(a=1, b=2, c=3, d=4)
+>>> letters_1 = OrderedDict(b=2, a=1, d=4, c=3)
+>>> letters_0 == letters_1
+False
+
+>>> letters_2 = OrderedDict(a=1, b=2, c=3, d=4)
+>>> letters_0 == letters_2
+True
