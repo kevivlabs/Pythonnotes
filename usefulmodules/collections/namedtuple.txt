@@ -1,0 +1,48 @@
+list or tuple of elements by position , to access them by their name
+
+from collections import namedtuple
+**************************************************************************
+* Code from realpython https://realpython.com/python-collections-module/ *
+**************************************************************************
+# use it when you want to decouple your code from the position of element it manipulates
+
+from collections import namedtuple
+
+>>> # Use a list of strings as field names
+>>> Point = namedtuple("Point", ["x", "y"])
+>>> point = Point(2, 4)
+>>> point
+Point(x=2, y=4)
+
+>>> # Access the coordinates
+>>> point.x
+2
+>>> point.y
+4
+>>> point[0]
+2
+
+>>> # Use a generator expression as field names
+>>> Point = namedtuple("Point", (field for field in "xy"))
+>>> Point(2, 4)
+Point(x=2, y=4)
+
+>>> # Use a string with comma-separated field names
+>>> Point = namedtuple("Point", "x, y")
+>>> Point(2, 4)
+Point(x=2, y=4)
+
+>>> # Use a string with space-separated field names
+>>> Point = namedtuple("Point", "x y")
+>>> Point(2, 4)
+Point(x=2, y=4)
+
+>>> point
+Point(x=2, y=4)
+>>> len(point)
+2
+>>> a,b=point
+>>> a
+2
+>>> b
+4
