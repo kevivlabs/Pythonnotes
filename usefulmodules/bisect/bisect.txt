@@ -1,0 +1,133 @@
+#good to know function 
+#key = ['round', 'juicy']
+>>> hash(key)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: unhashable type: 'list'
+
+Bisect module:
+
+Find Index	    Insert Element
+bisect()	      insort()
+bisect_left()	  insort_left()
+bisect_right()	insort_right()
+
+
+import bisect
+>>> sorted_fruits = ['apple', 'banana', 'orange', 'plum']
+>>> bisect.bisect_left(sorted_fruits, 'banana')
+1
+Banana is the second element
+
+Even if the elements are not in the list, it can tell you where to put it
+
+>>> bisect.bisect_left(sorted_fruits, 'apricot')
+1 #between apple and banana
+>>> bisect.bisect_left(sorted_fruits, 'watermelon')
+4 # watermelon should be the last
+
+
+sorted_fruits = [
+...     'apple',
+...     'banana', 'banana', 'banana',
+...     'orange',
+...     'plum'
+... ]
+>>> bisect.bisect_left(sorted_fruits, 'banana')
+1
+#gives the leftmost position of Banana
+
+bisect.bisect_right(sorted_fruits, 'banana')
+4
+
+#always gives one value right more than searched value
+to find the number of bananas
+l = bisect.bisect_left(sorted_fruits, 'banana')
+>>> r = bisect.bisect_right(sorted_fruits, 'banana')
+>>> r - l
+3
+
+############################################################33
+
+ import bisect
+>>> sorted_fruits = ['apple', 'banana', 'orange']
+>>> bisect.insort(sorted_fruits, 'apricot')
+>>> bisect.insort_left(sorted_fruits, 'watermelon')
+>>> bisect.insort_right(sorted_fruits, 'plum')
+>>> sorted_fruits
+['apple', 'apricot', 'banana', 'orange', 'plum', 'watermelon']
+
+@dataclass(order=True)
+
+
+##################################################################
+
+Binary Search 
+def find_index(elements, value):
+    left, right = 0, len(elements) - 1
+    while left<=right
+    middle = (left + right) // 2
+
+    if elements[middle] == value:
+        return middle
+
+    if elements[middle] < value:
+        left = middle + 1
+    elif elements[middle] > value:
+        right = middle - 1
+       
+ ###################################################
+ If the element in the middle was a match, then you return its index. Otherwise, if it was too small, then you need to move the lower boundary up. If it was too big, then you need to move the upper boundary down.
+ However, you must also remember to sort the list using the same key that you’re going to search with:
+
+>>> fruits = ['orange', 'plum', 'watermelon', 'apple']
+>>> fruits.sort(key=len)
+>>> fruits
+['plum', 'apple', 'orange', 'watermelon']
+>>> fruits[find_index(fruits, key=len, value=10)]
+'watermelon'
+>>> print(find_index(fruits, key=len, value=3))
+None
+In the example above, watermelon was chosen because its name is precisely ten characters long, while no fruits on the list have names made up of three letters.
+
+That’s great, but at the same time, you’ve just lost the ability to search by value. To remedy this, you could assign the key a default value of None and then check if it was given or not. However, in a more streamlined solution, you’d always want to call the key. By default, it would be an identity function returning the element itself:
+
+def identity(element):
+    return element
+
+def find_index(elements, value, key=identity):
+    ...
+Alternatively, you might define the identity function inline with an anonymous lambda expression:
+
+def find_index(elements, value, key=lambda x: x):
+    ...
+ ##################################
+ Recursive 
+ 
+ ###############################3
+ 
+ def contains(elements, value):
+    def recursive(left, right):
+        if left <= right:
+            middle = (left + right) // 2
+            if elements[middle] == value:
+                return True
+            if elements[middle] < value:
+                return recursive(middle + 1, right)
+            elif elements[middle] > value:
+                return recursive(left, middle - 1)
+        return False
+    return recursive(0, len(elements) - 1)
+ 
+ Python is dictated by the so-called LEGB rule, which tells the interpreter to look for symbols in the following order:
+
+Local scope
+Enclosing scope
+Global scope
+Built-in symbols
+
+  math.isclose(a, b, rel_tol=1e-16)
+False
+
+on the order of O(log(n)).
+ 
