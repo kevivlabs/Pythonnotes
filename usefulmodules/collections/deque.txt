@@ -1,0 +1,70 @@
+from collections import deque
+#very useful for doing memory efficient stacks and queues
+
+**************************************************************
+# code from https://realpython.com/python-collections-module/*
+*************************************************************
+
+--------------------------------------------------------------------
+from collections import deque
+
+>>> ticket_queue = deque()
+>>> ticket_queue
+deque([])
+
+>>> # People arrive to the queue
+>>> ticket_queue.append("Jane")
+>>> ticket_queue.append("John")
+>>> ticket_queue.append("Linda")
+
+>>> ticket_queue
+deque(['Jane', 'John', 'Linda'])
+
+>>> # People bought their tickets
+>>> ticket_queue.popleft()
+'Jane'
+>>> ticket_queue.popleft()
+'John'
+>>> ticket_queue.popleft()
+'Linda'
+
+# maxlen is very useful... 
+>>> recent_files
+deque(['database.py', 'core.py', 'README.md'], maxlen=3)
+recent_files.appendleft("requirements.txt")
+>>> recent_files
+deque(['requirements.txt', 'database.py', 'core.py'], maxlen=3)
+numbers = deque([1, 2])
+>>> numbers.extend([3, 4, 5])
+>>> numbers
+deque([1, 2, 3, 4, 5])
+
+>>> numbers.extendleft([-1, -2, -3, -4, -5])
+>>> numbers
+deque([-5, -4, -3, -2, -1, 1, 2, 3, 4, 5])
+
+>>> # Insert an item at a given position
+>>> numbers.insert(5, 0)
+>>> numbers
+deque([-5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5])
+Deques also support sequence operations:
+
+Method	Description
+.clear()	Remove all the elements from a deque
+.copy()	Create a shallow copy of a deque
+.count(x)	Count the number of deque elements equal to x
+.remove(value)	Remove the first occurrence of value
+
+ordinals = deque(["first", "second", "third"])
+>>> ordinals.rotate()
+>>> ordinals
+deque(['third', 'first', 'second'])
+
+>>> ordinals.rotate(2)
+>>> ordinals
+deque(['first', 'second', 'third'])
+ordinals = deque(["first", "second", "third"])
+>>> ordinals[1]
+'second'
+
+
